@@ -27,15 +27,15 @@ pyautogui.write("chrome")
 pyautogui.press("enter")
 pyautogui.write(link)
 pyautogui.press("enter")
-time.sleep(3) # Uma pausa maior para uma linha especifica
+time.sleep(1) # Uma pausa maior para uma linha especifica
 
 
 # Sessão de login
 pyautogui.click(x=2465, y=-90)
 pyautogui.write("email123@gmail.com")
-pyautogui.press("enter")
-pyautogui.click(x=2361, y=-29)
+pyautogui.press("tab")
 pyautogui.write("123")
 pyautogui.press("enter")
 
+time.sleep(3)
 
