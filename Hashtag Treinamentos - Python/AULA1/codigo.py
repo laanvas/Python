@@ -8,6 +8,8 @@
 
 import pyautogui
 import time
+import pandas
+tabela = pandas.read_csv("produtos.csv")
 
 # pyautogui.click -> clicar com o mouse
 # pyautogui.write -> escrever um texto
@@ -37,5 +39,37 @@ pyautogui.press("tab")
 pyautogui.write("123")
 pyautogui.press("enter")
 
-time.sleep(3)
+
+for linha in tabela.index:
+
+    pyautogui.click(x=2437, y=-180)
+
+    codigo = tabela.loc[linha, "codigo"]
+
+    pyautogui.write(codigo)
+    pyautogui.press("tab")
+
+    pyautogui.write("")
+    pyautogui.press("tab")
+
+    pyautogui.write("")
+    pyautogui.press("tab")
+
+    pyautogui.write("")
+    pyautogui.press("tab")
+
+    pyautogui.write("")
+    pyautogui.press("tab")
+
+    pyautogui.write("")
+    pyautogui.press("tab")
+
+    pyautogui.write("")
+    pyautogui.press("tab")
+
+    pyautogui.press("enter") # apertar para enviar
+
+
+# para dar scroll para cima-> pyautogui.scroll(500)
+# para dar scroll para baixo-> pyautogui.scroll(-500)
 
