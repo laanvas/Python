@@ -77,7 +77,7 @@ for linha in tabela.index:
     if not pandas.isna(obs):
          pyautogui.write(str(obs))
 
-    
+
     pyautogui.press("tab")
     pyautogui.press("enter") # apertar para enviar
 
