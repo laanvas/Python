@@ -35,6 +35,27 @@ x = tabela.drop(columns = colunas)
 
 from sklearn.model_selection import train_test_split
 
-x_treino, x_teste, y_treino, y_teste = train_test_split(x, y)
+x_treino, x_teste, y_treino, y_teste = train_test_split(x, y, test_size=0.3, random_state=1)
 
+
+# arvore de decisão
+from sklearn.ensemble import RandomForestClassifier
+# vizinhos proximos
+from sklearn.neighbors import KNeighborsClassifier
+
+modelo_arvoredecisao = RandomForestClassifier()
+modelo_knn = KNeighborsClassifier()
+
+modelo_arvoredecisao.fit(x_treino, y_treino)
+modelo_knn.fit(x_treino, y_treino)
+
+from sklearn.metrics import accuracy_score
+
+# declaração de variaveis
+previsao_arvoredecisao = modelo_arvoredecisao.predict(x_teste.to_numpy())
+previsao_knn = modelo_knn.predict(x_teste.to_numpy())
+
+# vai mostrar o resultado
+print(accuracy_score(y_teste, previsao_arvoredecisao))
+print(accuracy_score(y_teste, previsao_knn))
 
