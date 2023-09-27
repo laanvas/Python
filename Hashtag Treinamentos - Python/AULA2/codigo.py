@@ -15,4 +15,6 @@ tabela = tabela.dropna()
 #print(tabela["cancelou"].value_counts()) # Vai mostrar quantos cancelaram
 #print(tabela["cancelou"].value_counts(normalize=True)) # Vai mostrar quantos cancelaram em %
 
+print()
+
 
