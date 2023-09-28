@@ -1,5 +1,5 @@
 # Python IA
-
+import pandas
 # Passo a Passo:
 # Passo 0 - Entender o desafio e a empresa
 # Passo 1 - Importar a base de dados
@@ -58,4 +58,12 @@ previsao_knn = modelo_knn.predict(x_teste.to_numpy())
 # vai mostrar o resultado
 print(accuracy_score(y_teste, previsao_arvoredecisao))
 print(accuracy_score(y_teste, previsao_knn))
+
+
+novos_clientes = pandas.read_csv("novos_clientes.csv")
+tabela["profissao"] = codificador.fit_transform(novos_clientes["profissao"])
+tabela["mix_credito"] = codificador.fit_transform(novos_clientes["mix_credito"])
+tabela["comportamento_pagamento"] = codificador.fit_transform(novos_clientes["comportamento_pagamento"])
+
+previsoes = modelo_arvoredecisao.predict(novos_clientes)
 
