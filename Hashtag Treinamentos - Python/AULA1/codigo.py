@@ -33,17 +33,18 @@ time.sleep(1) # Uma pausa maior para uma linha especifica
 
 
 # Sessão de login
-pyautogui.click(x=2465, y=-90)
+pyautogui.click(x=926, y=298)
 pyautogui.write("email123@gmail.com")
 pyautogui.press("tab")
 pyautogui.write("123")
+
 pyautogui.press("enter")
 
 time.sleep(1)
 
 for linha in tabela.index:
 
-    pyautogui.click(x=2437, y=-180)
+    pyautogui.click(x=886, y=212)
 
     codigo = tabela.loc[linha, "codigo"]
     marca = tabela.loc[linha, "marca"]
